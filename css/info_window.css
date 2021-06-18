@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Poppins:wght@300&display=swap');
+
+.info {
+    min-width: 620px;
+    position: absolute;
+    right: 0;
+    top: 10px;
+    border-radius: 4px;
+    border-left: 8px solid black;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 100000;
+    border-color: black;
+    background: black;
+    /* background: rgba(255, 255, 255, 0.4); */
+    box-shadow: 0 15px 20px rgba(0, 0, 0, 0.3);
+}
+
+.info.showInfo {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+
+.info.show {
+    animation: showInfo 1s ease forwards;
+}
+
+@keyframes showInfo {
+    0% {
+        transform: translateX(100%);
+    }
+
+    40% {
+        transform: translateX(-10%);
+    }
+
+    100% {
+        transform: translateX(-10px);
+    }
+}
+
+.info.hide {
+    animation: hideInfo 1s ease forwards;
+}
+
+@keyframes hideInfo {
+
+    40% {
+        transform: translateY(-10%);
+    }
+
+    100% {
+        transform: translateY(200%);
+    }
+}
+
+/* bearbeitet die Größe des Schließbuttons + Position*/
+.info .fa-times-circle {
+    position: absolute;
+    transform: translateY(20%);
+    color: white;
+    font-size: 27px;
+}
+
+/* Position des Buttons */
+.info .close-info {
+    position: relative;
+    transform: translateY(-30%);
+    cursor: pointer;
+}
+
+/* bearbeitet den Inhalt in der Box */
+.info .content {
+    padding: 5% 4px 5% 5%;
+    max-width: 600px;
+    min-height: 600px;
+}
+
+.close-info .fa-times-circle:hover {
+    cursor: pointer;
+    color: rgb(139, 134, 134);
+}
+
+#firstHeading,
+.info h1 {
+    color: rgb(255, 255, 255);
+    margin: 0 0 10px;
+    font-size: 40px;
+    text-transform: uppercase;
+    text-decoration: underline;
+    font-family: 'Poppins', sans-serif;
+    letter-spacing: 5px;
+}
+
+.bodyContent {
+    color: rgb(253, 253, 253);
+    font-weight: 100;
+    font-family: 'Playfair Display', serif;
+    letter-spacing: 2px;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+
+.bodyContent span {
+    color: rgb(187, 180, 180);
+    font-family: 'Anton', sans-serif;
+    letter-spacing: normal;
+}
+
+#picture {
+    position: relative;
+    width: 100%;
+    border: 5px rgb(255, 255, 255) ridge;
+    margin: auto;
+    margin-top: 18px;
+    margin-bottom: 3px;
+}
+
+.bodyContent a {
+    color: rgb(146, 246, 250);
+}
