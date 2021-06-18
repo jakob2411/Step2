@@ -179,6 +179,22 @@ class Standort {
         },
       });
       map.setOptions({ minZoom: 2.5});
+
+      //hier wird die Verbindungslinie erstellt
+      const flightPlanCoordinates = [
+        { lat: 37.772, lng: -122.214 },
+        { lat: 21.291, lng: -157.821 },
+        { lat: -18.142, lng: 178.431 },
+        { lat: -27.467, lng: 153.027 },
+      ];
+      const flightPath = new google.maps.Polyline({
+        path: flightPlanCoordinates,
+        geodesic: true,
+        strokeColor: "#FF0000",
+        strokeOpacity: 1.0,
+        strokeWeight: 2,
+      });
+      flightPath.setMap(map);
   
       //Marker anlegen
       const infowindow = new google.maps.InfoWindow({
@@ -295,15 +311,14 @@ class Standort {
             position: myLatlng,
             animation: google.maps.Animation.BOUNCE,
             map: map,
-            title: "FIM"
+            title: "FIM",
           });
-  
-          marker.addListener("click", () => {
+            marker.addListener("click", () => {
   
             document.querySelector('#firstHeading').textContent = "FIM";
             document.querySelector('#typ').textContent = "Entwickler";
             document.querySelector('#adresse').textContent = "@Cara, Hani, Felix, Domi, Jakob";
-            document.querySelector('#creditor').textContent = "Diese Karte wurde Studenten der Uni Augsburg im Rahmen des Projektstudiums Wirtschaftsinformatik entwickelt";
+            document.querySelector('#creditor').textContent = "Diese Karte wurde von Studenten der Uni Augsburg im Rahmen des Projektstudiums Wirtschaftsinformatik entwickelt";
             document.querySelector('#partner-seitP').textContent = "";
             document.querySelector('#purchasing-volumeP').textContent = "";
             document.querySelector('#estimated-leverageP').textContent = "";
@@ -364,8 +379,7 @@ class Standort {
               }
           }
         });
-  
-  
+        
       // Hier wird die Funktionalität der Suchleiste implementiert
       var button = document.getElementById('button');
       button.addEventListener("click", function() {
