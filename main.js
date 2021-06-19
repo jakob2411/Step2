@@ -283,7 +283,10 @@ class Standort {
             if (auto_standort[a].supplier_image != null) {
               document.querySelector('#picture').src = auto_standort[a].supplier_image;
             }
-  
+
+            // if (auto_standort[a].supplier_video != null) {
+            //   document.querySelector('#more').src = auto_standort[a].supplier_video;
+            // }
             
             // document.querySelector('#transport').src =auto_standort[a].mode_of_transportation;           Bei Bedarf aktivierbar
             // document.querySelector('#co2-Fußabdruck').src =auto_standort[a].carbon_footprint;
