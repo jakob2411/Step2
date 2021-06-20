@@ -181,20 +181,39 @@ class Standort {
       map.setOptions({ minZoom: 2.5});
 
       //hier wird die Verbindungslinie erstellt
-      const flightPlanCoordinates = [
-        { lat: 37.772, lng: -122.214 },
-        { lat: 21.291, lng: -157.821 },
-        { lat: -18.142, lng: 178.431 },
-        { lat: -27.467, lng: 153.027 },
-      ];
-      const flightPath = new google.maps.Polyline({
-        path: flightPlanCoordinates,
-        geodesic: true,
-        strokeColor: "#FF0000",
-        strokeOpacity: 1.0,
-        strokeWeight: 2,
+      const lineSymbol = {
+        path:google.maps.SymbolPath.FORWARD_CLOSED_ARROW,
+        scale: 4,
+        strokeColor: "#009ACD",
+      };
+
+      const line = new google.maps.Polyline({
+        path: [
+          { lat: 34.69311, lng: 135.49386 },
+          { lat: 25.05742, lng: 121.51491 },
+          { lat: 47.896, lng: 11.84192 },
+          { lat: 48.180590440013944, lng: 10.757923708716877 },
+        ],
+        icons: [
+          {
+            icon: lineSymbol,
+            offset: "100%",
+          },
+        ],
+        map: map,
       });
-      flightPath.setMap(map);
+      animateCircle(line);
+    
+
+      function animateCircle(line) {
+        let count = 0;
+        window.setInterval(() => {
+          count = (count + 1) % 200;
+          const icons = line.get("icons");
+          icons[0].offset = count / 2 + "%";
+          line.set("icons", icons);
+        }, 20);
+      }
   
       //Marker anlegen
       const infowindow = new google.maps.InfoWindow({
