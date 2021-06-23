@@ -22,3 +22,5 @@ Funktionsumfang:
 - Darstellung des konkreten Lieferwegs für ein jeweiliges Produkt auf der SCM
   mit Verlinkung auf die jeweilige Produktseite
 - Anzeigen von Informationen beim Anlicken von POIs
+- zudem finden sich in dieser Version noch unsere eigenen Marker (Schöffel
+  wollte diese aus Design-Gründen nicht, wir finden sie jedoch toll!)
