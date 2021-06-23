@@ -20,4 +20,5 @@ sich in der main.js ab Zeile 183.
 
 Funktionsumfang:
 - Darstellung des konkreten Lieferwegs für ein jeweiliges Produkt auf der SCM
+  mit Verlinkung auf die jeweilige Produktseite
 - Anzeigen von Informationen beim Anlicken von POIs
