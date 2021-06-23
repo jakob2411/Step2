@@ -1,91 +1,91 @@
 //Klasse Standort
 class Standort {
 
-    //Konstruktor der Klasse
-    constructor(la, lo, name, unit_type, adress, bild, creditor, division, partner_since_year, purchasing_volume,
-       estimated_leverage, employees_female, employees_male, audit_type, fair_wear_audit,
-        last_fair_wear_training, bsci_id, wrap_id, complaints, certificates, mode_of_transportation,
-        port_name, port_coordinates_latitude, port_coordinates_longitude, warehouse_name, carbon_footprint, street, street_addition,place,country_code, country, hcs_id) {
-  
-    this.hcs_id = hcs_id;
-    this.la = la;
-    this.lo = lo;
-    this.name = name;
-    this.unit_type = unit_type;
-    this.adress = adress;
-    this.bild = bild;
-    this.creditor = creditor;
-    this.division = division;
-    this.partner_since_year = partner_since_year;
-    this.purchasing_volume = purchasing_volume;
-    this.estimated_leverage = estimated_leverage;
-    this.employees_female = employees_female;
-    this.employees_male = employees_male;
-    this.audit_type = audit_type;
-    this.fair_wear_audit = fair_wear_audit;
-    this.last_fair_wear_training = last_fair_wear_training;
-    this.sci_id = bsci_id;
-    this.wrap_id = wrap_id;
-    this.complaints = complaints;
-    this.certificates = certificates;
-    this.mode_of_transportation = mode_of_transportation;
-    this.port_name = port_name;
-    this.port_coordinates_latitude = port_coordinates_latitude;
-    this.port_coordinates_longitude = port_coordinates_latitude;
-    this.warehouse_name = warehouse_name;
-    this.carbon_footprint = carbon_footprint;
-    this.street =street;
-    this.street_addition = street_addition;
-    this.place = place;
-    this.country_code = country_code;
-    this.country = country;
-    }
-  }
-  
-  //Globale Variablen
-  var la;
-  var lo;
-  var name;
-  var unit_type;
-  var street;
-  var street_addition;
-  var zip_code;
-  var place;
-  var country_code;
-  var country;
-  var adress;
-  var bild;
-  var creditor;
-  var division;
-  var partner_since_year;
-  var purchasing_volume;
-  var estimated_leverage;
-  var employees_female;
-  var employees_male;
-  var audit_type;
-  var fair_wear_audit;
-  var last_fair_wear_training;
-  var bsci_id;
-  var wrap_id;
-  var complaints;
-  var certificates;
-  var mode_of_transportation;
-  var port_name;
-  var port_coordinates_latitude;
-  var port_coordinates_longitude;
-  var warehouse_name;
-  var carbon_footprint;
-  var hcs_id; //eineutige id
-  
-  //Feld, in dem alle Standorte gespeichert werden (inkl. aller Attribute)
-  var auto_standort = [];
-  var contentString = [];
-  var ids = []; //Alle Ids um zu vergleichen, ids existieren
-  
-  var json_length;
-  
-  //Feld, in dem alle Marker gespeichert werden
-  var markers = []; 
+	//Konstruktor der Klasse
+	constructor(la, lo, name, unit_type, adress, bild, creditor, division, partner_since_year, purchasing_volume,
+		estimated_leverage, employees_female, employees_male, audit_type, fair_wear_audit,
+		last_fair_wear_training, bsci_id, wrap_id, complaints, certificates, mode_of_transportation,
+		port_name, port_coordinates_latitude, port_coordinates_longitude, warehouse_name, carbon_footprint, street, street_addition, place, country_code, country, hcs_id) {
+
+		this.hcs_id = hcs_id;
+		this.la = la;
+		this.lo = lo;
+		this.name = name;
+		this.unit_type = unit_type;
+		this.adress = adress;
+		this.bild = bild;
+		this.creditor = creditor;
+		this.division = division;
+		this.partner_since_year = partner_since_year;
+		this.purchasing_volume = purchasing_volume;
+		this.estimated_leverage = estimated_leverage;
+		this.employees_female = employees_female;
+		this.employees_male = employees_male;
+		this.audit_type = audit_type;
+		this.fair_wear_audit = fair_wear_audit;
+		this.last_fair_wear_training = last_fair_wear_training;
+		this.sci_id = bsci_id;
+		this.wrap_id = wrap_id;
+		this.complaints = complaints;
+		this.certificates = certificates;
+		this.mode_of_transportation = mode_of_transportation;
+		this.port_name = port_name;
+		this.port_coordinates_latitude = port_coordinates_latitude;
+		this.port_coordinates_longitude = port_coordinates_latitude;
+		this.warehouse_name = warehouse_name;
+		this.carbon_footprint = carbon_footprint;
+		this.street = street;
+		this.street_addition = street_addition;
+		this.place = place;
+		this.country_code = country_code;
+		this.country = country;
+	}
+}
+
+//Globale Variablen
+var la;
+var lo;
+var name;
+var unit_type;
+var street;
+var street_addition;
+var zip_code;
+var place;
+var country_code;
+var country;
+var adress;
+var bild;
+var creditor;
+var division;
+var partner_since_year;
+var purchasing_volume;
+var estimated_leverage;
+var employees_female;
+var employees_male;
+var audit_type;
+var fair_wear_audit;
+var last_fair_wear_training;
+var bsci_id;
+var wrap_id;
+var complaints;
+var certificates;
+var mode_of_transportation;
+var port_name;
+var port_coordinates_latitude;
+var port_coordinates_longitude;
+var warehouse_name;
+var carbon_footprint;
+var hcs_id; //eineutige ID
+
+//Feld, in dem alle Standorte gespeichert werden (inkl. aller Attribute)
+var auto_standort = [];
+var contentString = [];
+var ids = []; //Alle IdD um zu vergleichen, ob IDs existieren
+
+var json_length;
+
+//Feld, in dem alle Marker gespeichert werden
+var markers = [];
 
   var abfrage;
 
@@ -162,7 +162,7 @@ class Standort {
   abfrage.open("GET", "response.json", false);
   abfrage.send();
   
-  
+  //Google Map wird initialisiert
   function initMap() {
   
       //hier wird definiert, wie stark in die Karte reingezoomt wird und wo sich das Zentrum befinden soll, wenn man die Seite aufruft
@@ -215,7 +215,7 @@ class Standort {
         }, 20);
       }
   
-      //Marker anlegen
+      //Marker anlegen anhand ihres Typus
       const infowindow = new google.maps.InfoWindow({
       });
   
@@ -248,6 +248,7 @@ class Standort {
             });
           }
   
+          //hier wird einerseits die Funktionalität implementiert, dass unser Infowindow erscheint und zwar jedes mal ein spezifisches für jeden Standort
           newMarker.addListener("click", () => {
   
             document.querySelector('#firstHeading').textContent = auto_standort[a].name;
@@ -255,7 +256,7 @@ class Standort {
             document.querySelector('#adresse').textContent = auto_standort[a].adress;
             document.querySelector('#creditor').textContent = auto_standort[a].creditor;
   
-            
+            //Manche Standorte haben keine Informationen und deshalb wird erstmal überprüft, ob Daten vorliegen:
             if (auto_standort[a].partner_since_year == null) {
               document.querySelector('#partner-seitP').textContent = "";
             } else {
@@ -298,18 +299,14 @@ class Standort {
               document.querySelector('#beschwerden').textContent = auto_standort[a].complaints;
             }
   
-            // Wenn das für src null eingesetzt  (bzw undefined) tritt eine Fehlermeldung ein, die beschreibt, dass der localHost undefined ist
-            if (auto_standort[a].supplier_image != null) {
+			// Wenn hier für src null eingesetzt wird (bzw. undefined), tritt eine Fehlermeldung ein, die beschreibt, dass der localHost undefined ist
+
+      if (auto_standort[a].supplier_image != null) {
               document.querySelector('#picture').src = auto_standort[a].supplier_image;
             }
 
-            // if (auto_standort[a].supplier_video != null) {
-            //   document.querySelector('#more').src = auto_standort[a].supplier_video;
-            // }
-            
-            // document.querySelector('#transport').src =auto_standort[a].mode_of_transportation;           Bei Bedarf aktivierbar
-            // document.querySelector('#co2-Fußabdruck').src =auto_standort[a].carbon_footprint;
-  
+         
+            //Wenn auf den Standort geklickt wird, öffnet sich das infoWindow, zoomt zum spezifischen Standort; lässt den Hintergrund ausblurren 
             $('.info').addClass("show");
             $('.info').removeClass("hide");
             $('.info').addClass("showInfo");
@@ -319,12 +316,13 @@ class Standort {
             $('.container').addClass("active");
           });
   
+          //alle MArker werden in markers gespeichert
           markers.push(newMarker);
         }
   
         console.log(auto_standort);
   
-        ////////////////// unsere Verewigung
+        ////////////////// unsere Verewigung -> der FIM-Standort
         const infowindow2 = new google.maps.InfoWindow({
         });
           var myLatlng = new google.maps.LatLng(48.33366559150027, 10.894521557382948);
@@ -434,7 +432,8 @@ class Standort {
             $('.alert').removeClass("show");
             $('.alert').addClass("hide");
           setTimeout(() => {  $('.alert').removeClass("showAlert"); }, 1100);
-          }, 3000); //hide ist after 3 sec
+          }, 3000); 
+          //wenn die Eingabe leer ist, werden alle Standorte angezeigt
         } else if (input === "") {
           for(i = 0; i < markers.length; i++) {
             markers[i].setVisible(true);
@@ -453,7 +452,7 @@ class Standort {
         
       });
   
-      //close Info function
+      //Damit wird das InfoWindow geschlossen
     $('.close-info').click(function () {
       $('.info').removeClass("show");
       $('.info').addClass("hide");
