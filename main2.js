@@ -2,31 +2,26 @@
 class Standort {
 
 	//Konstruktor der Klasse
-	constructor(la, lo, name, unit_type, adress, bild, creditor, mode_of_transportation,
-		port_name, port_coordinates_latitude, port_coordinates_longitude, warehouse_name, street, street_addition, place, country_code, country, hcs_id) {
+	constructor(id, la, lo, name, unit_type, adress, street, street_addition, place, country_code, country, next_location) {
 
-		this.hcs_id = hcs_id;
+    this.id = id;
 		this.la = la;
 		this.lo = lo;
 		this.name = name;
 		this.unit_type = unit_type;
 		this.adress = adress;
-		this.bild = bild;
-		this.creditor = creditor;
-		this.mode_of_transportation = mode_of_transportation;
-		this.port_name = port_name;
-		this.port_coordinates_latitude = port_coordinates_latitude;
-		this.port_coordinates_longitude = port_coordinates_latitude;
-		this.warehouse_name = warehouse_name;
 		this.street = street;
 		this.street_addition = street_addition;
 		this.place = place;
 		this.country_code = country_code;
 		this.country = country;
+    this.next_location = next_location;
 	}
 }
 
 //Globale Variablen
+
+var id;
 var la;
 var lo;
 var name;
@@ -38,12 +33,8 @@ var place;
 var country_code;
 var country;
 var adress;
-var creditor;
-var mode_of_transportation;
-var port_name;
-var port_coordinates_latitude;
-var port_coordinates_longitude;
-var warehouse_name;
+var next_location;
+
 
 //Feld, in dem alle Standorte gespeichert werden (inkl. aller Attribute)
 var auto_standort = [];
@@ -77,7 +68,7 @@ var markers = [];
       for (var i = 0; i < json_length; ++i){
   
         if (myObj.results[i].type === "supply_chain_unit") {
-  
+          id = myObj.results[i].data.id;
           la = myObj.results[i].data.coordinates.latitude;
           lo = myObj.results[i].data.coordinates.longitude;
           name = myObj.results[i].data.name;
@@ -89,16 +80,10 @@ var markers = [];
           country_code = myObj.results[i].data.country_code;
           country = myObj.results[i].data.country;
           adress = myObj.results[i].data.country + ", " + myObj.results[i].data.place;
-          creditor = myObj.results[i].data.creditor;
-          mode_of_transportation = myObj.results[i].data.mode_of_transportation;
-          port_name = myObj.results[i].data.port_name;
-          port_coordinates_latitude = myObj.results[i].data.port_coordinates_latitude;
-          port_coordinates_longitude = myObj.results[i].data.port_coordinates_longitude;
-          warehouse_name = myObj.results[i].data.warehouse_name;
+          next_location = myObj.results[i].data.next_location;
           
         //für jeden Standort wird ein Objekt erzeugt
-          let t = new Standort(la,lo,name,unit_type,adress,creditor, mode_of_transportation,
-          port_name,port_coordinates_latitude,port_coordinates_longitude,warehouse_name, street, street_addition,place,country_code, country);
+          let t = new Standort(id, la,lo,name,unit_type,adress, street, street_addition,place,country_code, country, next_location);
   
         auto_standort.push(t);
         console.log(myObj.results[i].type);
@@ -110,7 +95,7 @@ var markers = [];
   
   
   
-  abfrage.open("GET", "response1.json", false);
+  abfrage.open("GET", "response2.json", false);
   abfrage.send();
   
   //Google Map wird initialisiert
@@ -131,43 +116,27 @@ var markers = [];
       });
       map.setOptions({ minZoom: 2.5});
 
-      //hier wird die Verbindungslinie zwischen den Standorten erstellt
-      const lineSymbol = {
-        path:google.maps.SymbolPath.FORWARD_CLOSED_ARROW,
-        scale: 4,
-        strokeColor: "#009ACD",
-      };
-
-      const line = new google.maps.Polyline({
-        path: [
-        
-        ],
-        icons: [
-          {
-            icon: lineSymbol,
-            offset: "100%",
-          },
-        ],
-        map: map,
-      });
-      animateCircle(line);
-    
+      //hier wird die Verbindungslinie zwischen den Standorten erstellt      
       //hier fügen wir die Koordinaten der einzelnen Standorte in die Linie ein
       //die Standorte werden automatisch der Reihenfolge nach aus der .json-Datei/Datenbank abgerufen
-      //Version 1 mit einer Verbindungslinie
-      for (var i = 0; i < auto_standort.length; i++) {
-        var newPath = new google.maps.LatLng(auto_standort[i].la, auto_standort[i].lo);
-        line.getPath().push(newPath);
-      }
+      //Version 2 mit verschiedenen Linie
 
-      function animateCircle(line) {
-        let count = 0;
-        window.setInterval(() => {
-          count = (count + 1) % 200;
-          const icons = line.get("icons");
-          icons[0].offset = count / 2 + "%";
-          line.set("icons", icons);
-        }, 20);
+      for (var i = 0; i < auto_standort.length; i++) {
+        if (auto_standort[i].unit_type === "Material Lieferant" || auto_standort[i].unit_type === "Produktionsstätte") {
+            next = auto_standort[i].next_location;
+            var j = 0;
+            while(auto_standort[j].id != next) {
+              j++;
+            }
+            const line = new google.maps.Polyline({
+              path: [
+                {lat: auto_standort[i].la, lng: auto_standort[i].lo},
+                {lat: auto_standort[j].la, lng: auto_standort[j].lo},
+              ],
+               map: map,
+               geodesic: true,
+            });
+        }
       }
   
       //Marker anlegen anhand ihres Typus
