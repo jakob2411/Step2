@@ -270,56 +270,56 @@ var markers = [];
         });
         
       // Hier wird die Funktionalität der Suchleiste implementiert
-      var button = document.getElementById('button');
-      button.addEventListener("click", function() {
-        var i;
-        var input = document.getElementById('searchbar').value.toLowerCase();
-        var eingabe = false;
+      // var button = document.getElementById('button');
+      // button.addEventListener("click", function() {
+      //   var i;
+      //   var input = document.getElementById('searchbar').value.toLowerCase();
+      //   var eingabe = false;
   
-        for(i = 0; i < markers.length; i++) {
-          //erstmal alle Marker unsichtbar machen, sodass danach nur die gesuchten auf sichtbar gesetzt werden müssen
-          markers[i].setVisible(false);
-          if(auto_standort[i].name.toLowerCase() == input || auto_standort[i].country.toLowerCase() == input || auto_standort[i].place.toLowerCase() == input) {
-            markers[i].setVisible(true);
-            eingabe = true;
-          }
-        }
+      //   for(i = 0; i < markers.length; i++) {
+      //     //erstmal alle Marker unsichtbar machen, sodass danach nur die gesuchten auf sichtbar gesetzt werden müssen
+      //     markers[i].setVisible(false);
+      //     if(auto_standort[i].name.toLowerCase() == input || auto_standort[i].country.toLowerCase() == input || auto_standort[i].place.toLowerCase() == input) {
+      //       markers[i].setVisible(true);
+      //       eingabe = true;
+      //     }
+      //   }
   
-        //falls die Eingabe nicht übereinstimmt / es keine Eingabe gibt, werden alle Standorte angezeigt
-        if (!eingabe && input != "") {
-          for(i = 0; i < markers.length; i++) {
-            markers[i].setVisible(false);
-          }
+      //   //falls die Eingabe nicht übereinstimmt / es keine Eingabe gibt, werden alle Standorte angezeigt
+      //   if (!eingabe && input != "") {
+      //     for(i = 0; i < markers.length; i++) {
+      //       markers[i].setVisible(false);
+      //     }
   
-          document.querySelector('.msg').innerHTML = "Kein Ergebnis!";
+      //     document.querySelector('.msg').innerHTML = "Kein Ergebnis!";
   
-          window.scrollTo({ top: 0, behavior: 'smooth' });
-          $('.alert').addClass("show");
-          $('.alert').removeClass("hide");
-          $('.alert').addClass("showAlert");
-          setTimeout(function () {
-            $('.alert').removeClass("show");
-            $('.alert').addClass("hide");
-          setTimeout(() => {  $('.alert').removeClass("showAlert"); }, 1100);
-          }, 3000); 
-          //wenn die Eingabe leer ist, werden alle Standorte angezeigt
-        } else if (input === "") {
-          for(i = 0; i < markers.length; i++) {
-            markers[i].setVisible(true);
-          }
+      //     window.scrollTo({ top: 0, behavior: 'smooth' });
+      //     $('.alert').addClass("show");
+      //     $('.alert').removeClass("hide");
+      //     $('.alert').addClass("showAlert");
+      //     setTimeout(function () {
+      //       $('.alert').removeClass("show");
+      //       $('.alert').addClass("hide");
+      //     setTimeout(() => {  $('.alert').removeClass("showAlert"); }, 1100);
+      //     }, 3000); 
+      //     //wenn die Eingabe leer ist, werden alle Standorte angezeigt
+      //   } else if (input === "") {
+      //     for(i = 0; i < markers.length; i++) {
+      //       markers[i].setVisible(true);
+      //     }
   
-          $('.alert').removeClass("show");
-            $('.alert').addClass("hide");
-            setTimeout(() => {  $('.alert').removeClass("showAlert"); }, 1100);
-        } else if (eingabe) {
-            $('.alert').removeClass("show");
-            $('.alert').addClass("hide");
-            setTimeout(() => {  $('.alert').removeClass("showAlert"); }, 1100);
-            map.setZoom(4);
-        }
+      //     $('.alert').removeClass("show");
+      //       $('.alert').addClass("hide");
+      //       setTimeout(() => {  $('.alert').removeClass("showAlert"); }, 1100);
+      //   } else if (eingabe) {
+      //       $('.alert').removeClass("show");
+      //       $('.alert').addClass("hide");
+      //       setTimeout(() => {  $('.alert').removeClass("showAlert"); }, 1100);
+      //       map.setZoom(4);
+      //   }
   
         
-      });
+      // });
   
       //Damit wird das InfoWindow geschlossen
     $('.close-info').click(function () {
