@@ -1,4 +1,5 @@
 /* Hier wird das Autocomplete in der Suchleiste bearbeitet und seine Position relativ zur Suchleiste gestaltet */
+/* 
 .autocomplete {
   position: relative;
   z-index: 10;
