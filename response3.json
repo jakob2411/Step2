@@ -1,0 +1,167 @@
+{
+    "results": [
+      {
+        "type": "supply_chain_unit",
+        "data": {
+          "id": 1,
+          "unit_type": "Material Lieferant",
+          "creditor": "Toray Industries, Inc.",
+          "name": "Toray Industries, Inc.",
+          "street": "Nakanoshima Mitsui Bldg., 3-3, Nakanoshima 3-chome Kita-ku",
+          "street_addition": null,
+          "zip_code": "530-8222",
+          "place": "Osaka",
+          "country_code": "JP",
+          "country": "Japan",
+          "coordinates": {
+            "latitude": 34.69311,
+            "longitude": 135.49386
+          },
+          "next_location": 3
+        }
+      },
+      {
+        "type": "supply_chain_unit",
+        "data": {
+          "id": 2,
+          "unit_type": "Material Lieferant",
+          "creditor": "APEX (Zhejiang) TEXTILE CO., LTD",
+          "name": "APEX (Zhejiang) TEXTILE CO., LTD",
+          "street": "No.175, Ling Hao Road, Hangzhou Economic & Technological Development Zone",
+          "street_addition": null,
+          "zip_code": "310019",
+          "place": "Hangzhou",
+          "country_code": "CN",
+          "country": "China",
+          "coordinates": {
+            "latitude": 30.21164,
+            "longitude": 110.21216
+          },
+          "next_location": 3
+        }
+      },
+      {
+        "type": "supply_chain_unit",
+        "data": {
+          "id": 3,
+          "unit_type": "Produktionsstätte",
+          "creditor": "Dummy123",
+          "name": "Dummy123",
+          "street": "No.175, Ling Hao Road, Hangzhou Economic & Technological Development Zone",
+          "street_addition": null,
+          "zip_code": "310019",
+          "place": "Hangzhou",
+          "country_code": "CN",
+          "country": "China",
+          "coordinates": {
+            "latitude": 20.21164,
+            "longitude": 100.21216
+          },
+          "next_location": 6
+        }
+      },
+      {
+        "type": "supply_chain_unit",
+        "data": {
+          "id": 4,
+          "unit_type": "Material Lieferant",
+          "creditor": "PS Vina (PS fty)",
+          "name": "PS Vina Co., Ltd.",
+          "street": "Gia Le Industrial Zone, Dong Xuan Commune Dong Hung Dist",
+          "street_addition": null,
+          "zip_code": "41000",
+          "place": "Thai Binh Province VN-41000",
+          "country_code": "VN",
+          "country": "Vietnam",
+          "coordinates": {
+            "latitude": 45.50366,
+            "longitude": 106.36139
+          },
+          "next_location": 6
+        }
+      },
+      {
+        "type": "supply_chain_unit",
+        "data": {
+          "id": 5,
+          "unit_type": "Material Lieferant",
+          "creditor": "Magictex (Singtex garment)",
+          "name": "Wilde Baumwollplantage",
+          "street": "ROAD NO.6, BINH AN TEXTILE INDUSTRIAL PARK, BINH T",
+          "street_addition": null,
+          "zip_code": "72000",
+          "place": "Binh Duong Province",
+          "country_code": "VN",
+          "country": "Brasilien",
+          "coordinates": {
+            "latitude": -30.89171,
+            "longitude": -50.81687
+          },
+          "next_location": 6
+        }
+      },
+      {
+        "type": "supply_chain_unit",
+        "data": {
+          "id": 6,
+          "unit_type": "Produktionsstätte",
+          "creditor": "Pontetorto S.P.A.",
+          "name": "Pontetorto S.P.A.",
+          "street": "Via Roma, 15/17/19/21",
+          "street_addition": null,
+          "zip_code": "59013",
+          "place": "Montemurlo",
+          "country_code": "IT",
+          "country": "Italien",
+          "coordinates": {
+            "latitude": 43.91243,
+            "longitude": 11.03968
+          },
+          "next_location": 7
+        }
+      },
+      {
+        "type": "supply_chain_unit",
+        "data": {
+          "id": 8,
+          "unit_type": "Produktionsstätte",
+          "creditor": "Malediven GmbH",
+          "name": "Arbeiten im Urlaub",
+          "street": "Am Strand 5",
+          "street_addition": null,
+          "zip_code": "59013",
+          "place": "Addu City",
+          "country_code": "MV",
+          "country": "Malediven",
+          "coordinates": {
+            "latitude": -0.613589,
+            "longitude": 73.095710
+          },
+          "next_location": 3
+        }
+      },
+      {
+        "type": "supply_chain_unit",
+        "data": {
+          "id": 7,
+          "unit_type": "Verkauf",
+          "creditor": "",
+          "name": "Schöffel-LOWA Store",
+          "street": "Fuggerstraße 19",
+          "street_addition": null,
+          "zip_code": "86830",
+          "place": "Schwabmünchen",
+          "country_code": "DE",
+          "country": "Deutschland",
+          "coordinates": {
+            "latitude": 48.180358235595875,
+            "longitude": 10.757848532858805
+          },
+          "next_location": null
+        }
+        
+      }
+    ],
+    "version": "0a3c791",
+    "license": "All Rights Reserved"
+  }
