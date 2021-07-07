@@ -61,10 +61,6 @@ var markers = [];
   abfrage.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
       var myObj = JSON.parse(abfrage.responseText);
-  
-      console.log(myObj.results[0].data.coordinates);
-      console.log(abfrage);
-
 
       //Länge des Datensatzes (die Anzahl der Standorte)
       json_length = Object.keys(myObj.results).length;
@@ -101,14 +97,10 @@ var markers = [];
           port_name,port_coordinates_latitude,port_coordinates_longitude,warehouse_name, street, street_addition,place,country_code, country);
   
         auto_standort.push(t);
-        console.log(myObj.results[i].type);
         }
       }
     }
-  }
-        console.log(auto_standort);
-  
-  
+  }  
   
   abfrage.open("GET", "response1.json", false);
   abfrage.send();
@@ -223,10 +215,7 @@ var markers = [];
           //alle Marker werden in markers gespeichert
           markers.push(newMarker);
         }
-  
-        console.log(auto_standort);
-  
-  
+
         // Hier wird der Filter für die Produzenten gesetzt
         var checkbox_produzenten = document.getElementById('checkbox-1');
   
