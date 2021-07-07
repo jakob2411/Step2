@@ -5,7 +5,7 @@
 
 }
 body{
-	background-image: url(/bilder/garrett-sears-T57t6ZUT2Kc-unsplash.jpg);
+	background-image: url(bilder/garrett-sears-T57t6ZUT2Kc-unsplash.jpg);
 	background-position: center;
 	background-size:cover;
 	background-repeat: no-repeat;
@@ -27,7 +27,7 @@ body{
 	margin: 1rem;
 	padding: 1.5rem;
 	color: white;
-	
+
 }
 .link1{
 	text-decoration: none;
@@ -60,7 +60,7 @@ body{
 	padding: 1.5rem;
 	display: flex;
 	color: white;
-	
+
 }
 
 .footer{
