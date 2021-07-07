@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="css/alert_notification.css">
     <!-- <link rel="stylesheet" href="css/autocomplete.css"> -->
     <link rel="stylesheet" href="css/info_window.css">
-    <link rel="stylesheet" href="css/media.css">
+    <link rel="stylesheet" href="css/product1.css">
     <link rel="stylesheet" href="css/map.css">
 
 
@@ -20,12 +20,14 @@
     <script defer src="main.js"></script> <!-- Mit dem defer wird es erst nach dem Body geladen-->
     <!-- <script defer src="js/autocomplete.js"></script> -->
     <!-- <script defer src="data.js"></script> -->
-    <script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCFuLT313jOj_3arI3VBeRnKTi9BQhOi3U&callback=initMap" type="text/javascript"></script>
-    
+    <script defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCFuLT313jOj_3arI3VBeRnKTi9BQhOi3U&callback=initMap"
+        type="text/javascript"></script>
+
     <!--Suchbutton einfügen
     <script defer src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js" integrity="sha512-RXf+QSDCUQs5uwRKaDoXt55jygZZm2V++WUZduaU/Ui/9EGp3f/2KZVahFZBKGH0s774sd3HmrhUy+SgOFQLVQ==" crossorigin="anonymous"></script> -->
 
-    
+
 
     <meta name="description" content="Awesome Supply-Chain Visualisation by Schöffel">
     <meta name="keywords" content="Supply-Chain, sustainability, caring about your customers, environmental Protection">
@@ -49,7 +51,7 @@
                 <div class="bodyContent">
                     <p id="typP">Typ: <span id="typ"></span></p>
                     <p id="adresseP">Adresse: <span id="adresse"></span></p>
-                    
+
                 </div>
             </div>
         </div>
@@ -67,7 +69,7 @@
         <div class="container" id="blur">
             <h1 class="header_1"> Supply-Chain-Map Step 2 mit Pseudodaten</h1>
             <div class="uebersicht">
-            <!-- <h2 class="header_2">Standortsuche:</h2>
+                <!-- <h2 class="header_2">Standortsuche:</h2>
 
                    <form id="searchForm" autocomplete="off" action="/action_page.php">
                       <div class="search autocomplete">
@@ -79,9 +81,10 @@
                      </div>
                   </form> -->
                 <!-- Einfügen des Produktsbilds über der Karte -->
-                  <div>
-                    <a href="index.html"><img src="bilder/wilde_hose.jpg" height="110" border="2" align="right" title="Zurück zum Shop"></a>
-                  </div>
+                <div>
+                    <a href="index.html"><img class="pic1" src="bilder/wilde_hose.jpg" height="110" border="2"
+                            align="right" title="Zurück zum Shop"></a>
+                </div>
                 <form class="check">
                     <div class="div_check">
                         <input type="checkbox" id="checkbox-2" name="Lieferanten" checked>
@@ -96,7 +99,7 @@
                 </form>
             </div>
 
-             <!--Div-Element für die Map -->
+            <!--Div-Element für die Map -->
             <!-- Hier wird auch der API-Key für Google-Maps eingefügt -->
             <div id="map"></div>
         </div>
